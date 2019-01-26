@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-$sqltmp = "SELECT * FROM news";
+$sqltmp = "SELECT * FROM cunews";
 $rstmp = $db->query($sqltmp);
 $total = $rstmp->rowCount();
 $rstmp = null;
@@ -33,7 +33,7 @@ if( $next > $lastpage ) $next = $lastpage;
    <th>조회</th>
   </tr>
 <?php
-$sql = "SELECT * FROM news ORDER BY wdate DESC limit {$start}, {$list}";
+$sql = "SELECT * FROM cunews ORDER BY wdate DESC limit {$start}, {$list}";
 $rs = $db->query($sql);
 $data = $rs->fetchAll();
 foreach($data as $news):

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 18-10-26 02:39
+-- 생성 시간: 19-01-26 12:08
 -- 서버 버전: 10.1.34-MariaDB
 -- PHP 버전: 7.2.7
 
@@ -25,39 +25,79 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `cu`
+-- 테이블 구조 `cunews`
 --
 
-CREATE TABLE `cu` (
-  `username` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `userid` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `userpw` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `phone` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `cunews` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `body` text NOT NULL,
+  `writer` varchar(50) NOT NULL,
+  `wdate` date NOT NULL,
+  `file` varchar(100) NOT NULL,
+  `hit` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `cunews`
+--
+
+INSERT INTO `cunews` (`id`, `title`, `body`, `writer`, `wdate`, `file`, `hit`) VALUES
+(1, '문의합니다', '상품 문의합니다.', '박방울', '2019-01-24', 'api.jpg', 8);
 
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `news`
+-- 테이블 구조 `cuuser`
 --
 
-CREATE TABLE `news` (
+CREATE TABLE `cuuser` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `body` text CHARACTER SET utf8 NOT NULL,
-  `writer` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `wdate` datetime NOT NULL,
-  `file` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `hit` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `username` varchar(20) NOT NULL,
+  `userid` varchar(20) NOT NULL,
+  `userpw` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 테이블의 덤프 데이터 `news`
+-- 테이블의 덤프 데이터 `cuuser`
 --
 
-INSERT INTO `news` (`id`, `title`, `body`, `writer`, `wdate`, `file`, `hit`) VALUES
-(0, '글쓰기 테스트 입니다.', '잘 써집니까?', '박지희', '2018-10-25 20:16:37', 'yellow.png', 0);
+INSERT INTO `cuuser` (`id`, `username`, `userid`, `userpw`, `phone`, `email`) VALUES
+(1, '박지희', 'brs0704', '1010qkrwlgml', '01097055061', 'brs0704@naver.com');
+
+--
+-- 덤프된 테이블의 인덱스
+--
+
+--
+-- 테이블의 인덱스 `cunews`
+--
+ALTER TABLE `cunews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 테이블의 인덱스 `cuuser`
+--
+ALTER TABLE `cuuser`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 덤프된 테이블의 AUTO_INCREMENT
+--
+
+--
+-- 테이블의 AUTO_INCREMENT `cunews`
+--
+ALTER TABLE `cunews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 테이블의 AUTO_INCREMENT `cuuser`
+--
+ALTER TABLE `cuuser`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

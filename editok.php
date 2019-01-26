@@ -29,7 +29,7 @@ if(is_uploaded_file($_FILES['upfile']['tmp_name'])) {
 }
 
 if( $id && $title && $body && $writer ) {
- $sql = "UPDATE news SET ";
+ $sql = "UPDATE cunews SET ";
  $sql .= "title=:title";
  $sql .= ", body=:body";
  $sql .= ", writer=:writer ";

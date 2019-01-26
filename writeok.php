@@ -24,7 +24,7 @@ if(is_uploaded_file($_FILES['upfile']['tmp_name'])) {
 }
 
 if( $title && $body && $writer ) {
- $sql = "INSERT INTO news SET ";
+ $sql = "INSERT INTO cunews SET ";
  $sql .= "title=:title";
  $sql .= ", body=:body";
  $sql .= ", writer=:writer";

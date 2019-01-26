@@ -1,6 +1,5 @@
 <?php include("header.php"); ?>
-<div class="join"> 
-    <h1>---------- 회원가입 ----------</h1>
+<div class="join">
     <form action="joinok.php" method="post" onsubmit="return check();" class="join_form">
     <div class="form-group">
         <input type="text" name="username" id="username" required class="form-control" placeholder="이름">
@@ -18,7 +17,7 @@
         <input type="text" name="phone" id="phone" required class="form-control" placeholder="전화번호">
     </div>
     <div class="form-group">
-        <input type="text" name="mail" id="mail" required class="form-control" placeholder="Email">
+        <input type="text" name="email" id="email" required class="form-control" placeholder="Email">
     </div>
     <button type="submit" class="btn btn-success"><i class="fas fa-user-plus"></i> 회원가입</button>
  </form>
@@ -31,8 +30,8 @@
   var userpw = $("#userpw").val();
   var userpw2 = $("#userpw2").val();
   var phone = $("#phone").val();
-  var mail = $("#mail").val();
-  if( ! username || ! userid || ! userpw || ! userpw2 || ! phone || ! mail ) {
+  var email = $("#email").val();
+  if( ! username || ! userid || ! userpw || ! userpw2 || ! phone || ! email ) {
    alert("필수항목이 빠졌습니다.");
    return false;
   }

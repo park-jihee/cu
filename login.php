@@ -9,7 +9,7 @@ if( isset($_POST['userpw']) ){
  $userpw = $_POST['userpw'];
 }
 if( $userid && $userpw ) {
- $sql = "SELECT * FROM cu ";
+ $sql = "SELECT * FROM cuuser ";
  $sql .= "WHERE userid='{$userid}' ";
  $sql .= "and userpw='{$userpw}'";
  if( $rs = $db->query($sql) ) {
@@ -23,7 +23,6 @@ if( $userid && $userpw ) {
 ?>
 <body>
 	<div class="login">
-		<h1>------ 로그인 ------</h1>
 		<form action="login.php" method="post" class="login_form">
 			<div class="form-group">
 				<input type="text" name="userid" id="userid" placeholder="아이디" class="form-control" required>

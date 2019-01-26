@@ -11,7 +11,7 @@ if( isset($_GET['id']) ) {
  $id = (int)$_GET['id'];
 }
 if( $id ) {
- $sql = "SELECT * FROM news WHERE id={$id}";
+ $sql = "SELECT * FROM cunews WHERE id={$id}";
  $rs = $db->query($sql);
  if( $rs->rowCount() ) {
   $data = $rs->fetch();

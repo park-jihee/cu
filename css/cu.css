@@ -872,7 +872,7 @@ button:hover span:after {
 
 .login {
 	width: 500px;
-	padding: 200px 0px 268px 0px;
+	padding: 150px 0px 200px 0px;
 	margin: 0 auto;
 }
 
@@ -882,11 +882,6 @@ button:hover span:after {
 	width: 700px;
 	padding: 100px 0px 150px 0px;
 	margin: 0 auto;
-}
-.join h1, .login h1{
-	color: #A9CE37;
-	font-size: 35px;
-	text-align: center;
 }
 .join_form, .login_form{
 	border: 3px solid #A9CE37;

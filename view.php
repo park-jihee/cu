@@ -12,8 +12,8 @@ if( isset($_GET['id']) ) {
  $id = (int)$_GET['id'];
 }
 if( $id ) {
- $db->query("UPDATE news SET hit=hit+1 WHERE id={$id}");
- $sql = "SELECT * FROM news WHERE id={$id}";
+ $db->query("UPDATE cunews SET hit=hit+1 WHERE id={$id}");
+ $sql = "SELECT * FROM cunews WHERE id={$id}";
  $rs = $db->query($sql);
  if( $rs->rowCount() ) {
   $data = $rs->fetch();
