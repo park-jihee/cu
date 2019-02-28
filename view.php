@@ -53,17 +53,17 @@ if( $id ) {
   event.preventDefault();
   var id = $(this).attr("href");
   if( ! id ) return;
-  if( ! confirm("지울까요?") ) return;
-  $.post("delete.php", {"id":id}, function(count){
-   count = parseInt(count,10);
-   if( count ) {
-    alert("삭제되었습니다.");
-    location.href="/";
-   } else {
-    alert("삭제실패.");
-   }
+if( ! confirm("지울까요?") ) return;
+    $.post("delete.php", {"id":id}, function(count){
+    count = parseInt(count,10);
+    if( count ) {
+        alert("삭제되었습니다.");
+        location.href="/";
+    } else {
+        alert("삭제실패.");
+    }
   });
- });
+});
 </script>   
 
 <?php include("footer.php"); ?>
