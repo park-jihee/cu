@@ -8,18 +8,17 @@ $wdate = "";
 $hit = 0;
 $file = "";
 if( isset($_GET['id']) ) {
- $id = (int)$_GET['id'];
+    $id = (int)$_GET['id'];
 }
 if( $id ) {
- $sql = "SELECT * FROM cunews WHERE id={$id}";
- $rs = $db->query($sql);
- if( $rs->rowCount() ) {
-  $data = $rs->fetch();
-  $title = $data['title'];
-  $writer = $data['writer'];
-  $body = $data['body'];
-  $file = $data['file'];
- }
+    $sql = "SELECT * FROM cunews WHERE id={$id}";
+    $rs = $db->query($sql);
+    if( $rs->rowCount() ) {
+        $data = $rs->fetch();
+        $title = $data['title'];
+        $writer = $data['writer'];
+        $body = $data['body'];
+        $file = $data['file'];
 }
 ?>
 <article>
