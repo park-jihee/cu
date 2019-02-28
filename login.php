@@ -2,23 +2,24 @@
 include("header.php");
 $userid = "";
 $userpw = "";
+
 if( isset($_POST['userid']) ){
- $userid = $_POST['userid'];
+ 	$userid = $_POST['userid'];
 }
 if( isset($_POST['userpw']) ){
- $userpw = $_POST['userpw'];
+ 	$userpw = $_POST['userpw'];
 }
 if( $userid && $userpw ) {
- $sql = "SELECT * FROM cuuser ";
- $sql .= "WHERE userid='{$userid}' ";
- $sql .= "and userpw='{$userpw}'";
- if( $rs = $db->query($sql) ) {
-  if( $user = $rs->fetch() ) {
-	$_SESSION['loginid'] = $user['userid'];
-   $_SESSION['loginname'] = $user['username'];
-  }
- }
- header("Location: index.php");
+ 	$sql = "SELECT * FROM cuuser ";
+ 	$sql .= "WHERE userid='{$userid}' ";
+ 	$sql .= "and userpw='{$userpw}'";
+ 	if( $rs = $db->query($sql) ) {
+ 	 	if( $user = $rs->fetch() ) {
+			$_SESSION['loginid'] = $user['userid'];
+ 	  	$_SESSION['loginname'] = $user['username'];
+ 	 	}
+ 	}
+ 	header("Location: index.php");
 }
 ?>
 <body>
@@ -39,14 +40,14 @@ if( $userid && $userpw ) {
 </body>
 
 <script>
- function login() {
-  var userid = $("#userid").val();
-  var userpw = $("#userpw").val();
-  if( ! userid || ! userpw ) {
-   alert("필수항목이 빠졌습니다.");
-   return false;
-  }
- }
+function login() {
+  	var userid = $("#userid").val();
+  	var userpw = $("#userpw").val();
+  	if( ! userid || ! userpw ) {
+   		alert("필수항목이 빠졌습니다.");
+   		return false;
+  	}
+}
 </script>
 
 <?php include("footer.php"); 
