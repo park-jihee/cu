@@ -22,14 +22,14 @@ if( isset($_POST['email']) ) {
     $email = $_POST['email'];
 }
 if( $username && $userid && $userpw && $phone && $email ) {
- $sql = "INSERT INTO cuuser SET ";
- $sql .= "username='{$username}'";
- $sql .= ", userid='{$userid}'";
- $sql .= ", userpw='{$userpw}'";
- $sql .= ", phone='{$phone}'";
- $sql .= ", email='{$email}'";
-
- $db->query($sql);
+    $sql = "INSERT INTO cuuser SET ";
+    $sql .= "username='{$username}'";
+    $sql .= ", userid='{$userid}'";
+    $sql .= ", userpw='{$userpw}'";
+    $sql .= ", phone='{$phone}'";
+    $sql .= ", email='{$email}'";
+    
+    $db->query($sql);
 }
 
 header("Location: ./");
